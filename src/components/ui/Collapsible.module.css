@@ -1,0 +1,30 @@
+.details {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+}
+.details + .details {
+  margin-top: 8px;
+}
+.summary {
+  cursor: pointer;
+  padding: 8px 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  list-style: none;
+}
+.summary::-webkit-details-marker {
+  display: none;
+}
+.summary::before {
+  content: '▸';
+  display: inline-block;
+  margin-right: 8px;
+  transition: transform 0.15s;
+}
+.details[open] > .summary::before {
+  transform: rotate(90deg);
+}
+.body {
+  padding: 0 12px 10px 30px;
+}

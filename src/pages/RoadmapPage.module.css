@@ -1,0 +1,187 @@
+.stage {
+  position: relative;
+  flex: 1;
+  /* dvh follows the visible viewport on mobile browsers (address bar shown/hidden). */
+  height: calc(100dvh - var(--header-h));
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+.panel {
+  position: absolute;
+  z-index: 3;
+  background: color-mix(in srgb, var(--bg-elev) 92%, transparent);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.intro {
+  top: 16px;
+  left: 16px;
+  width: 300px;
+  padding: 14px 16px;
+}
+.intro h1 {
+  font-size: 17px;
+  margin: 0 0 4px;
+}
+.description {
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.nextRow {
+  margin-top: 12px;
+}
+.next {
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+.next span {
+  color: var(--text-muted);
+}
+.next strong {
+  font-weight: 500;
+}
+.controls {
+  top: 16px;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px;
+}
+.legend {
+  bottom: 16px;
+  left: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  padding: 10px 14px;
+  font-size: 12px;
+  color: var(--text-muted);
+  max-width: calc(100% - 32px);
+}
+.legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.swatch {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid currentColor;
+}
+.read {
+  border-radius: 50%;
+  color: var(--kind-read);
+}
+.code {
+  border-radius: 3px;
+  color: var(--kind-code);
+}
+.project {
+  transform: rotate(45deg) scale(0.85);
+  color: var(--kind-project);
+}
+.done {
+  border-radius: 50%;
+  color: var(--done);
+  background: var(--done);
+}
+.hint {
+  color: var(--text-faint);
+}
+
+/* Phones: intro becomes a compact top bar; legend and buttons share the bottom row. */
+@media (max-width: 640px) {
+  .intro {
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    width: auto;
+    padding: 10px 12px;
+  }
+  .intro h1,
+  .description {
+    display: none;
+  }
+  .nextRow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  .nextRow .next {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.35;
+  }
+  .next strong {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .next br {
+    display: none;
+  }
+  .controls {
+    top: auto;
+    bottom: 8px;
+    right: 8px;
+    flex-direction: row;
+    padding: 4px;
+  }
+  /* Finger-sized buttons. */
+  .controls button {
+    height: 40px;
+    min-width: 40px;
+    justify-content: center;
+    font-size: 15px;
+  }
+  .legend {
+    bottom: 8px;
+    left: 8px;
+    max-width: calc(100% - 16px - 200px);
+    gap: 4px 10px;
+    padding: 7px 10px;
+    font-size: 11px;
+  }
+  .legend .hint {
+    display: none;
+  }
+}
+
+/* Phones in landscape: little height, so a narrow compact intro on the left and no legend. */
+@media (max-height: 500px) and (min-width: 641px) {
+  .intro {
+    top: 8px;
+    left: 8px;
+    width: 230px;
+    padding: 10px 12px;
+  }
+  .intro h1,
+  .description {
+    display: none;
+  }
+  .nextRow {
+    margin-top: 8px;
+  }
+  .next {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+  .controls {
+    top: 8px;
+    right: 8px;
+    padding: 4px;
+  }
+  .legend {
+    display: none;
+  }
+}

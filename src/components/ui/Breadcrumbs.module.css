@@ -1,0 +1,11 @@
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-faint);
+  margin-bottom: 14px;
+}
+.crumbs a {
+  color: var(--text-muted);
+}

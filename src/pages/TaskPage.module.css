@@ -1,0 +1,47 @@
+.head {
+  margin-bottom: 18px;
+}
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.title {
+  margin: 0 0 6px;
+}
+.summary {
+  color: var(--text-muted);
+  margin: 0;
+}
+.solve {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  margin: 18px 0;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-elev);
+}
+.solved {
+  border-color: color-mix(in srgb, var(--done) 60%, transparent);
+  background: color-mix(in srgb, var(--done) 10%, var(--bg-elev));
+}
+.date {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 32px;
+}
+.nav :global(a),
+.nav button {
+  max-width: 48%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

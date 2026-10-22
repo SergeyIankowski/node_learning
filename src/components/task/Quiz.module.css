@@ -1,0 +1,237 @@
+.intro {
+  margin: 0 0 16px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+.levelHeading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 22px 0 10px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.levelHeading:first-of-type {
+  margin-top: 0;
+}
+.question {
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+}
+.question + .question {
+  margin-top: 10px;
+}
+.qHead {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+.qNum {
+  flex: none;
+  font-weight: 700;
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+}
+.qText {
+  flex: 1;
+  min-width: 0;
+  font-weight: 500;
+}
+.multiHint {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--active);
+}
+.options {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+}
+.option {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 10px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition:
+    background 0.12s,
+    border-color 0.12s;
+}
+.option + .option {
+  margin-top: 4px;
+}
+.option:hover {
+  background: var(--bg-elev-2);
+}
+.option input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+.mark {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  border: 2px solid var(--border-strong);
+  background: var(--bg);
+  display: grid;
+  place-items: center;
+}
+.radio .mark {
+  border-radius: 50%;
+}
+.check .mark {
+  border-radius: 4px;
+}
+.option input:checked + .mark {
+  border-color: var(--accent);
+}
+.radio input:checked + .mark::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.check input:checked + .mark::after {
+  content: '✓';
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--accent);
+}
+.option input:focus-visible + .mark {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 2px;
+}
+.optionText {
+  flex: 1;
+  min-width: 0;
+}
+.locked .option {
+  cursor: default;
+}
+.locked .option:not(.correct, .wrong):hover {
+  background: transparent;
+}
+.option.correct {
+  border-color: color-mix(in srgb, var(--done) 60%, transparent);
+  background: color-mix(in srgb, var(--done) 12%, transparent);
+}
+.option.wrong {
+  border-color: color-mix(in srgb, var(--danger) 60%, transparent);
+  background: color-mix(in srgb, var(--danger) 12%, transparent);
+}
+.missed {
+  border-color: color-mix(in srgb, var(--done) 60%, transparent);
+  border-style: dashed;
+}
+.verdictTag {
+  margin-left: auto;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.explanation {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-left: 3px solid var(--border-strong);
+  background: var(--bg-elev);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.explanationOk {
+  border-left-color: var(--done);
+}
+.explanationBad {
+  border-left-color: var(--danger);
+}
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+}
+.footer .spacer {
+  flex: 1;
+}
+.result {
+  margin-bottom: 18px;
+  padding: 16px 18px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg);
+}
+.resultPassed {
+  border-color: color-mix(in srgb, var(--done) 55%, transparent);
+}
+.resultFailed {
+  border-color: color-mix(in srgb, var(--active) 55%, transparent);
+}
+.resultHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 14px;
+}
+.score {
+  font-size: 26px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.verdict {
+  font-weight: 600;
+}
+.verdictText {
+  margin: 6px 0 14px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.levels {
+  display: grid;
+  gap: 8px;
+}
+.levelRow {
+  display: grid;
+  grid-template-columns: 110px 1fr 54px;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+.levelBar {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--bg-elev-2);
+  overflow: hidden;
+}
+.levelFill {
+  height: 100%;
+  border-radius: 999px;
+}
+.levelNum {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-muted);
+}
+.wrong input:checked + .mark {
+  border-color: var(--danger);
+}
+.radio.wrong input:checked + .mark::after {
+  background: var(--danger);
+}
+.check.wrong input:checked + .mark::after {
+  color: var(--danger);
+}

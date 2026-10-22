@@ -1,0 +1,56 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 20px;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+}
+.brand:hover {
+  text-decoration: none;
+}
+.logo {
+  width: 26px;
+  height: 26px;
+}
+.progress {
+  flex: 1;
+  max-width: 360px;
+}
+.actions {
+  margin-left: auto;
+  display: flex;
+  gap: 4px;
+}
+.file {
+  display: none;
+}
+@media (max-width: 640px) {
+  .progress {
+    display: none;
+  }
+}
+
+/* Smallest phones: the logo alone is the home link, so the three actions fit. */
+@media (max-width: 420px) {
+  .header {
+    gap: 8px;
+    padding: 0 10px;
+  }
+  .brandText {
+    display: none;
+  }
+}

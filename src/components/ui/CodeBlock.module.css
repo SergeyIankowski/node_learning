@@ -1,0 +1,12 @@
+.wrap {
+  position: relative;
+}
+.wrap pre {
+  margin: 0;
+  padding-right: 70px;
+}
+.copy {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+}
